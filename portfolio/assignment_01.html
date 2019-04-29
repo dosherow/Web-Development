@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Assignment 1</title>
+
+	<style>
+
+/* beg css styling */	
+
+	body {
+		background-color: #f2f3f4;
+		font-family: 'Futura';
+		}
+
+/* thumbnails styling positioning */
+	#pictures {
+		position: absolute;
+		padding-left: 18%;
+	}
+
+/* thumbnails sizing & hover */
+	#pictures img {
+		max-width: 15%;
+		height: auto;
+		cursor: pointer;
+	}
+
+/* title styling */
+	#portfolio {
+		text-align: left;
+		font-size: 2vw;
+		line-height: 2.5vw;
+		font-weight: bold;
+	}
+
+/* secondary text styling */
+	#bio p {
+		text-align: left;
+		font-size: 1vw;
+		line-height: 1.2vw;
+		font-weight: 100;
+	}
+
+/* secondary text positioning */
+	#bio {
+		position: absolute;
+		width: 15%;
+		padding-top: 12px;
+	}
+
+/* main image sizing and positioning */
+	.main img {
+		max-width: 65%;
+		height: auto;
+		float: right;
+	}
+
+
+	</style>
+
+
+
+
+</head>
+
+<!-- html for body -->
+
+<body>
+	<div id="portfolio">Photos I Take</div>
+	<div id="bio"><p>This is my portfolio. I make things and they're really cool. This is my portfolio. I make things 
+				and they're really cool. This is my portfolio. I make things and they're really cool. This is my portfolio. I make things and they're really cool. This is my portfolio. I make things and they're really cool. This is my portfolio. I make things and they're really cool.<br><br><br>
+				</p>
+	</div>
+	<div id="pictures">
+	<div class="thumbs1">
+	<img src="img/amster.jpg" alt="Amsterdam Overlook" id="img1">
+	</div>
+
+	<div class="thumbs">
+	<img src="img/and.jpg" alt="Anderson Paak" id="img2">
+	</div>
+
+	<div class="thumbs">
+	<img src="img/beach.jpg" alt="Dead Sea" id="img3">
+	</div>
+
+	<div class="thumbs">
+	<img src="img/brys.jpg" alt="Bryson Tiller" id="img4">
+	</div>
+
+	<div class="thumbs">
+	<img src="img/bwbuilding.jpg" alt="BlackAndWhite Building" id="img5">
+	</div>
+	</div>
+<div class="main">
+	<img src="img/bwbuilding.jpg" alt="BlackAndWhite Building" id="mainimage">
+</div>	
+
+<!-- beg of js onclick functions to change main image -->
+
+<script>
+	
+				document.querySelector('#img1').onclick = function() {
+				document.querySelector('#mainimage').src = 'img/amster.jpg';
+				document.querySelector('#mainimage').alt = "Amsterdam Overlook";
+			};
+
+				document.querySelector('#img2').onclick = function() {
+				document.querySelector('#mainimage').src = 'img/and.jpg';
+				document.querySelector('#mainimage').alt = "Anderson Paak";
+			};
+
+				document.querySelector('#img3').onclick = function() {
+				document.querySelector('#mainimage').src = 'img/beach.jpg';
+				document.querySelector('#mainimage').alt = "Dead Sea";
+			};
+
+				document.querySelector('#img4').onclick = function() {
+				document.querySelector('#mainimage').src = 'img/brys.jpg';
+				document.querySelector('#mainimage').alt = "Bryson Tiller";
+			};
+
+				document.querySelector('#img5').onclick = function() {
+				document.querySelector('#mainimage').src = 'img/bwbuilding.jpg';
+				document.querySelector('#mainimage').alt = "BlackAndWhite Building";
+			};
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
