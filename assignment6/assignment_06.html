@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 6: Registration Form Validation</title>
+
+<style>
+
+/* 
+
+First Name (text field),
+Last Name (text field),
+Email (text field),
+Website (text field),
+Phone (text field),
+Password (text or password field),
+Submit button. */
+
+* { 
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Helvetica Neue';
+}
+
+body {
+	background: #fff;
+	color: #1c302f;
+	line-height: 1.8;
+	padding: 1em;
+	font-weight: 500;
+}
+
+h2 p {
+	text-align: left;
+	font-size: 14px;
+	font-weight: 600;
+	margin-left: 20px;
+}
+
+.container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+}
+
+.site {
+	text-align: center;
+	font-weight: 300;
+}
+
+.site span {
+	color: #71f2a3;
+	font-weight: 700;
+}
+
+.data {
+	text-align: center;
+	font-weight: 300;
+	color: #1c302f;
+}
+
+.data span {
+	font-weight: 700;
+	color: #71f2a3;
+}
+
+.wrapper {
+	box-shadow: 0 0 20px 0 rgba(82, 95, 110, 0.3);
+	padding: 1em;
+	border-radius: 12px;
+}
+
+
+.contact form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+	text-align: center;
+}
+
+.contact form label {
+	display: block;
+	text-align: left;
+	margin-left: 11%;
+}
+
+.contact form p {
+	margin: 0;
+}
+
+.contact form .full {
+	grid-column: 1 / 3;
+	margin-top: 20px;
+}
+
+.contact form input {
+	width: 80%;
+	background-color: #e5e5e5;
+	border-radius: 6px;
+	border: 0;
+	padding: 1.5em;
+}
+
+button {
+	cursor: pointer;
+	width: 120px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #71f2a3;
+	text-transform: uppercase;
+}
+
+button:hover, button:focus {
+	background-color: #71f2a3;
+	color: white;
+	box-shadow: 0 0 20px 0 rgba(82, 95, 110, 0.3);
+	transition: background-color 0.6s ease-out;
+}
+
+.contact form input:hover, .contact form input:focus {
+	border: 1px solid #1c302f;
+}
+
+small {
+	margin-left: 11%;
+	text-align: left;
+	color: red;
+	display: block;
+	font-size: 9px;
+}
+
+
+
+</style>
+
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="container">
+	<h1 class="site"><span>Contact us. </span>For sales, support, or just a friendly message.</h1>
+	<div class="wrapper">
+		<div class="contact">
+			<form>
+				<p>
+					<label>First Name</label>
+					<input type="text" name="fname" id="fname" placeholder="Patty">
+					<small id="fname-error" class="danger"></small>
+				</p>
+
+				<p>
+					<label>Last Name</label>
+					<input type="text" name="lname" id="lname" placeholder="Mahomes">
+					<small id="lname-error" class="danger"></small>
+				</p>
+
+				<p>
+					<label>Email Address</label>
+					<input type="text" name="email" id="email" placeholder="mahomesmvp@usc.edu">
+					<small id="email-error" class="danger"></small>
+				</p>
+
+				<p>
+					<label>Website</label>
+					<input type="text" name="website" id="website" placeholder="http://chiefs.com">
+					<small id="website-error" class="danger"></small>
+				</p>
+
+				<p>
+					<label>Phone Number</label>
+					<input type="text" name="phone" id="phone" placeholder="123-456-7890">
+					<small id="phone-error" class="danger"></small>
+				</p>
+
+				<p>
+					<label>Password</label>
+					<input type="password" name="pass" id="pass" placeholder="**********">
+					<small id="password-error" class="danger"></small>
+				</p>
+
+				<p class="full">
+					<button type="submit">Submit</button>
+				</p>							
+			</form>	
+		</div>
+	</div>
+
+<h2 class="data"><span>Data Output: </span>
+	<p class="fullname">Full Name: <span id="name"></span></p>
+	<p class="prefix">Email Prefix: <span id="user"></span></p>
+	<p class="formatted">Formatted Phone Number: <span id="phonenum"></span></p> 
+</h2>
+
+</div>
+
+
+<script>
+
+document.querySelector('form').onsubmit = function() {
+		var isValid = true;
+		var fname = document.querySelector('#fname').value.trim();
+		var lname = document.querySelector('#lname').value.trim();
+		var email = document.querySelector('#email').value.trim();
+		var phone = document.querySelector('#phone').value.trim();
+
+
+if ( /^$/.test(fname) ) {
+	isValid = false;
+	document.querySelector("#fname-error").innerHTML = "First name cannot be empty";
+	document.querySelector("#fname").style.border = '1px solid red';
+}
+
+else if ( /^[A-Z][a-z]+$/.test(fname) == false ) {
+	isValid = false;
+	document.querySelector("#fname-error").innerHTML = "Invalid first name";
+	document.querySelector("#fname").style.border = '1px solid red';
+}
+
+else {
+	document.querySelector("#fname-error").innerHTML = "";
+	document.querySelector("#fname").style.border = '1px solid #71f2a3';
+}
+
+if ( /^$/.test(lname) ) {
+	isValid = false;
+	document.querySelector("#lname-error").innerHTML = "Last name cannot be empty";
+	document.querySelector("#lname").style.border = '1px solid red';
+}
+
+else if ( /^[A-Z][a-z]+$/.test(lname) == false ) {
+	isValid = false;
+	document.querySelector("#lname-error").innerHTML = "Invalid last name";
+	document.querySelector("#lname").style.border = '1px solid red';
+}
+
+else {
+	document.querySelector("#lname-error").innerHTML = "";
+	document.querySelector("#lname").style.border = '1px solid #71f2a3';
+}
+
+var address = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+if ( /^$/.test(email) ) {
+	isValid = false;
+	document.querySelector("#email-error").innerHTML = "Email cannot be empty";
+	document.querySelector("#email").style.border = '1px solid red';
+}
+
+else if ( address.test(email) == false ) {
+	isValid = false;
+	document.querySelector("#email-error").innerHTML = "Invalid email";
+	document.querySelector("#email").style.border = '1px solid red';
+}
+
+else if ( email.search(/usc.edu/) == -1 ) {
+	isValid = false;
+	document.querySelector("#email-error").innerHTML = "Must be a usc.edu email";
+	document.querySelector("#email").style.border = '1px solid red';
+}
+
+else {
+	document.querySelector("#email-error").innerHTML = "";
+	document.querySelector("#email").style.border = '1px solid #71f2a3';
+}
+
+if ( /^$/.test(phone) ) {
+	isValid = false;
+	document.querySelector("#phone-error").innerHTML = "Phone number cannot be empty";
+	document.querySelector("#phone").style.border = '1px solid red';
+}	
+
+else if ( /^\d{3}\s\d{3}\s\d{4}|\d{3}\-\d{3}\-\d{4}$/.test(phone) == false ) {
+	isValid = false;
+	document.querySelector("#phone-error").innerHTML = "Invalid phone format";
+	document.querySelector("#phone").style.border = '1px solid red';
+}
+
+else {
+	document.querySelector("#phone-error").innerHTML = "";
+	document.querySelector("#phone").style.border = '1px solid #71f2a3';
+}
+
+
+ /* Data Output */
+
+
+var fullname = fname + " " + lname;
+var username = document.querySelector("#email").value.indexOf("@");
+var phoneInput = phone.replace( /\D/g, "" );
+var phoneFormatted = phoneInput.substr(0,3) + "-" + phoneInput.substr(3,3) + "-" + phoneInput.substr(6);
+
+
+if (isValid == true) {
+	document.querySelector("#name").innerHTML = fullname;
+	document.querySelector("#name").style.fontWeight = 400;
+	document.querySelector("#user").innerHTML = email.substr(0, username);
+	document.querySelector("#user").style.fontWeight = 400;
+	document.querySelector("#phonenum").innerHTML = phoneFormatted;
+	document.querySelector("#phonenum").style.fontWeight = 400;
+}
+
+
+
+
+
+	return false;
+}
+
+
+
+
+</script>	
+</body>
+</html>

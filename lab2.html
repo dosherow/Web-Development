@@ -1,0 +1,182 @@
+<html>
+
+<head>
+	<title>Lab 2 Solution</title>
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+	<style>
+		body {
+			text-align: center;
+			font-family: Arial;
+			font-family: 'Bree Serif', serif;
+		}
+		h1 {
+			margin-bottom: 30px;
+			margin-top: 30px;
+		}
+		h2 {
+			margin-bottom: 30px;
+		}
+		.button-container {
+			width: 670px;
+			margin: 0 auto;
+		}
+		.button-container:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.button {
+			float: left;
+			width: 280px;
+			padding: 75px 0;
+			background-color: #676470;
+			cursor: pointer;
+			margin: 25px;
+			color: white;
+			font-size: 30px;
+		}
+
+		/* Write CSS rules for buttons below */
+
+		#button1 {
+			transition: all .8s;
+		}
+
+
+		#button1:hover {
+			background-color: orange;
+			transform: scale(1.1);
+		}
+		
+		#button2 {
+			border-radius: 0%;
+			transition: all .6s ease-in-out;
+		}
+
+		#button2:hover {
+			border-radius: 50%;
+			background-color: purple;
+		}
+
+		#button3 {
+			transition: 2s;
+		}
+
+		#button3:hover {
+			transform: rotate(-1080deg) scale(0);
+			background-color: red;
+
+		}
+
+		@keyframes swing {
+			0% {
+
+			}
+
+			50% {
+				transform: translate(8px);
+			}
+
+			100% {
+				transform: translate(-8px);
+			}
+		}
+
+		#button4 {
+			animation-duration: 1s;
+		}
+
+		#button4:hover {
+			animation-name: swing;
+			animation-iteration-count: 4;
+			background-color: blue;
+			opacity: .6;
+		}
+
+
+
+		/* ---- Loader: write CSS rules for loader in this area ---- */
+		.loader {
+			margin-bottom: 50px;
+		}
+
+		@keyframes bounce {
+			0% {
+
+			}
+
+			50% {
+				transform: translate(0px, 8px);
+				
+			}
+
+			100% {
+				transform: translate(0px, 0px);
+
+			}
+		}
+
+		.loader span:nth-child(1) {
+			animation-name: bounce;
+			animation-duration: 1s;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			background-color: red;
+			opacity: .3;
+		}
+
+		.loader span:nth-child(2) {
+			animation-name: bounce;
+			animation-duration: 1s;
+			animation-delay: 0.2s;
+			animation-iteration-count: infinite;
+			background-color: red;
+			opacity: .6;
+		}
+
+		.loader span:nth-child(3) {
+			animation-name: bounce;
+			animation-duration: 1s;
+			animation-delay: 0.4s;
+			animation-iteration-count: infinite;
+			background-color: red;
+			opacity: 1;
+		}
+
+
+		.loader span {
+			background: #3e3e3e;
+  			box-shadow: 1px 2px 3px #999;
+  			height: 14px;
+  			width: 14px;  
+  			display: inline-block;
+  			border-radius: 14px;
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Fun with Transitions & Animations</h1>
+		<div class="button-container">
+
+			<div class="button" id="button1">Grow</div>
+			<div class="button" id="button2">Square to Circle</div>
+			<div class="button" id="button3">Rotate out</div>
+			<div class="button" id="button4">Swing</div>
+		</div>
+		<div>
+			<h2>Loader</h2>
+
+			<div class="loader">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

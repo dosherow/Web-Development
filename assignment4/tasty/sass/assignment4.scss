@@ -1,0 +1,123 @@
+$font-primary: 'Avenir', serif;
+$accent: #99ccff;
+
+html body a {
+	font-family: $font-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-primary;
+}
+
+label {
+	font-family: $font-primary;
+}
+
+#fh5co-header .display-tc h1, .fh5co-cover .display-tc h1 {
+	font-size: 65px;
+	font-weight: 600;
+}
+
+#fh5co-header .display-tc h2, .fh5co-cover .display-tc h2 {
+	font-size: 20px;
+	line-height: 3.5;
+	margin-bottom: 10px;
+	letter-spacing: 1.6px;
+}
+
+.fh5co-section p {
+	font-family: $font-primary;
+	font-size: 14px;
+	color: #eaeff7;
+	opacity: .6;
+}
+
+// sets title font 
+#fh5co-logo a {
+	font-family: $font-primary;
+}
+
+
+// sets accent "." on title end
+.fh5co-nav #fh5co-logo a span {
+	color: $accent;
+}
+
+// sets nav active underline to accent color 
+.fh5co-nav ul li.active > a:after {
+	background: $accent;
+}
+
+// sets background color of dropdown menu on gallery to accent
+
+.fh5co-nav ul li.has-dropdown .dropdown {
+	background: $accent;
+}
+
+// sets outline color of buttons to accent color
+
+.btn-primary.btn-outline {
+	border: 2px solid $accent;
+}
+
+// sets button hover color to accent color FIX 
+
+.btn-primary {
+	background: $accent;
+	border: $accent;
+
+	::selection {
+		background: $accent;
+	}
+}
+
+// sets footer links to accent color NEED to get hover color working
+
+a {
+	color: $accent;
+}
+
+// sets footer icons to accent color 
+
+.fh5co-social-icons li a {
+	color: $accent;
+}
+
+// sets footer link colors to accent color NEED to get hover color working
+
+#fh5co-footer .fh5co-footer-links li a {
+	color: $accent;
+	text-decoration: none;
+}
+
+// sets three dots slider to accent color 
+#fh5co-slider-wrwap .flexslider .flex-control-nav li a {
+	background: $accent;
+}
+
+#fh5co-timeline .timeline > li > .timeline-badge {
+	background-color: $accent;
+}
+
+
+// links at bottom color change on hover 
+#fh5co-footer .fh5co-footer-links li a:hover {
+	text-decoration: underline;
+	color: #e6f2ff;
+}
+
+
+// footer links hover color change right above social media links
+a:hover, a:active, a:focus {
+	color: #e6f2ff;
+	outline: none;
+	text-decoration: none;
+}
+
+// button hover color change 
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background: $accent !important;
+	border-color: $accent !important;
+	color: white !important;
+}

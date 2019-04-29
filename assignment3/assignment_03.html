@@ -1,0 +1,191 @@
+<html>
+<head>
+
+	<!-- drew osherow assignment 3 -->
+	<title>JS Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<style>
+		#display {
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12 text-center mt-5">JS Calculator</h1>
+		</div> <!-- .row -->
+		<div class="row">
+			<div id="calculator" class="mt-4 col-12 col-md-6 ml-md-auto mr-md-auto col-lg-4">
+				<div class="row">
+					<input type="text" id="display" class="col-12 text-right form-control" value="">
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-9 btn btn-lg btn-outline-dark" id="reset">AC</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="divide">/</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="seven">7</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="eight">8</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="nine">9</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="multiply">x</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="four">4</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="five">5</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="six">6</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="subtract">-</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="one">1</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="two">2</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="three">3</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="add">+</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-6 btn btn-lg btn-outline-dark" id="zero">0</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="decimal">.</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="equal">=</button>
+				</div> <!-- .row -->
+			</div> <!-- #calculator -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+
+
+
+	<script> // beg script for button click calculations 
+
+	// global variables for calculations
+
+	var firstNum;
+	var operation;
+
+	document.querySelector("#seven").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#eight").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#nine").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#four").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#five").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#six").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#one").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#two").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#three").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#zero").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	document.querySelector("#decimal").onclick = function() {
+		document.querySelector("#display").value += this.innerHTML;
+	}
+
+	// Operations for addition, subtraction, division, multiplication 
+
+	// divide
+
+	document.querySelector('#divide').onclick = function() {
+		firstNum = document.querySelector("#display").value;
+		operation = "divide";
+		document.querySelector("#display").value = " ";
+	}
+
+	// multiply
+
+	document.querySelector("#multiply").onclick = function() {
+		firstNum = document.querySelector("#display").value;
+		operation = "multiply";
+		document.querySelector("#display").value = " ";
+	}
+
+	// subtract 
+
+	document.querySelector("#subtract").onclick = function() {
+		firstNum = document.querySelector("#display").value;
+		operation = "subtract";
+		document.querySelector("#display").value = " ";
+	}
+
+	// add 
+
+	document.querySelector("#add").onclick = function() {
+		firstNum = document.querySelector("#display").value;
+		operation = "add";
+		document.querySelector("#display").value = " ";
+	}
+
+	// user enters second number and clicks equal 
+
+	document.querySelector("#equal").onclick = function() {
+		var secondNum = document.querySelector("#display").value;
+
+	// parseFloat takes in any string in this case with decimal included 	
+		secondNum = parseFloat(secondNum);
+		firstNum = parseFloat(firstNum);
+
+	// setting local variable for calculation result
+
+		var result;
+
+		if (operation == 'add') {
+		result = firstNum + secondNum;
+	}
+
+	else if (operation == 'subtract') {
+		result = firstNum - secondNum;
+	}
+
+	else if (operation == 'divide') {
+		result = firstNum / secondNum;
+	}
+
+	else if (operation == 'multiply') {
+		result = firstNum * secondNum;
+	}
+
+
+	// .toFixed(1) displays result to 1 decimal place so any decimals are rounded no matter what, integers will display .0 at end
+
+	document.querySelector('#display').value = result.toFixed(1);
+}
+
+ 	// clearing with AC 
+
+ 	document.querySelector("#reset").onclick = function() {
+ 		document.querySelector("#display").value = "";
+ 	}
+
+
+
+
+	</script>	
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>jQuery Effects</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style>
+		.thumbnail > img {
+			cursor: pointer;
+			border-width: 3px !important;
+		}
+	</style>
+</head>
+<body class="py-5">
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12">Photo Gallery w/ jQuery</h1>
+		</div> <!-- .row -->
+
+		<div class="row mt-4 d-flex align-items-center">
+
+			<div class="thumbnail my-1 col-6 col-md-3">
+				<img src="img/thumb_1.jpg" class="img-fluid border" alt="USC Village">
+			</div> <!-- .col -->
+
+			<div class="thumbnail my-1 col-6 col-md-3">
+				<img src="img/thumb_2.jpg" class="img-fluid border" alt="Tutor Campus Center">
+			</div> <!-- .col -->
+
+			<div class="thumbnail my-1 col-6 col-md-3">
+				<img src="img/thumb_3.jpg" class="img-fluid border" alt="VKC">
+			</div> <!-- .col -->
+
+			<div class="thumbnail my-1 col-6 col-md-3">
+				<img src="img/thumb_4.jpg" class="img-fluid border" alt="Fountain">
+			</div> <!-- .col -->
+
+		</div> <!-- .row -->
+
+		<div class="row">
+			<div class="col-12 text-center mt-4">
+				<button type="button" class="btn btn-primary" id="show">Show</button>
+				<button type="button" class="btn btn-secondary" id="hide">Hide</button>
+			</div> <!-- .col -->
+		</div> <!-- .row -->
+
+		<div class="row" id="main-img-container">
+
+			<div class="col-10 mx-auto mt-4 text-center">
+				<img src="img/thumb_1.jpg" class="img-fluid" id="main" alt="USC Village">
+			</div> <!-- .col -->
+
+			<big class="col-12 text-center mt-4" id="big">
+				USC Village
+			</big> <!-- .col -->
+
+			</div>
+
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+
+	<!-- 3 load jquery -->
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script>
+
+		// when user clicks on Hide button, hide #main-img-container using one of jquery effects 
+
+		$('#hide').click( function() {
+			$("#main-img-container").css('display', 'none');
+		});
+
+		// when user clicks on show button, show #main-img-container using one of jquery effects 
+
+		$('#show').click ( function() {
+			$("#main-img-container").css('display', 'block');
+		});
+
+		// change opacity of all thumbnail images to 0.8 
+
+		$(".thumbnail").css('opacity', '0.8');
+
+		// when user's mouse enters a thumbnail image, set opacity of that image to 1.0. 
+
+		$(".thumbnail").mouseenter(function() {
+			$(this).css('opacity', '1.0');
+		});
+
+		// when user's mouse leaves a thumbnail image, set opacity back to 0.8.
+
+		$(".thumbnail").mouseleave(function() {
+			$(this).css('opacity', '0.8');
+		});
+
+		// when user clicks on thumbnail: 
+
+		// a. remove border-danger class from all thumbnail images using .removeClass() method
+
+		$(".thumbnail").click(function() {
+			$(".thumbnail").removeClass("border-danger");
+		
+
+		// b. add border-danger class to clicked thumbnail using addclass method
+			$(this).addClass("border-danger");
+
+		// c. set src attribute of main image to src attribute of clicked thumbnail
+
+			var src = $(this).children().attr('src');
+			var alt = $(this).children().attr('alt');
+			$("#main").attr("src", src);
+
+		// d. set alt attribute of main img to alt attribute of clicked thumbnail.
+			$("#main").attr("alt", alt);
+
+		// e. set caption to same values as alt attribute of clicked thumbnail
+			$("#big").html(alt);		
+
+		});
+
+	</script>	
+
+</body>
+</html>

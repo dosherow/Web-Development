@@ -1,0 +1,2941 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+
+<style>
+/* I REPLICATED DEMO 10 ON THE WEBSITE */
+
+/* grid container layout sizes */
+
+.container {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		grid-gap: 10px;
+		text-align: center;
+		height: 100%;
+		color: white;
+		font-family: 'futura';
+		overflow: hidden;
+	}
+
+/* header styling and layout coverage */	
+
+.header {
+	grid-row: span 1;
+	grid-column: 1 / -1;
+	background-color: gray;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-wrap: flex;
+	font-size: 20px;
+	letter-spacing: 12px;
+	text-transform: uppercase;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}	
+	
+
+/* image 1 layout and hover effects */
+
+.wrap1 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img1.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap1::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap1:hover::before {
+	transform: scale(3);
+}
+
+.wrap1 .mask1 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap1 .mask1:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+	transition-delay: .2s;
+}
+
+.wrap1 .mask1 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap1 .mask1:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap1 .mask1 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap1 .mask1:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap1 .mask1:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap1 .mask1 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap1 .mask1:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+
+.img1 {
+	position: relative;
+}
+
+
+/* image 2 layout and hover */
+
+.wrap2 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img2.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap2::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap2:hover::before {
+	transform: scale(3);
+}
+
+.wrap2 .mask2 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap2 .mask2:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap2 .mask2 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap2 .mask2:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap2 .mask2 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap2 .mask2:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap2 .mask2:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap2 .mask2 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap2 .mask2:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img2 {
+	position: relative;
+}
+
+/* image 3 layout and hover */
+
+.wrap3 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img3.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap3::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap3:hover::before {
+	transform: scale(3);
+}
+
+.wrap3 .mask3 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap3 .mask3:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap3 .mask3 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap3 .mask3:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap3 .mask3 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap3 .mask3:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap3 .mask3:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap3 .mask3 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap3 .mask3:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img3 {
+	position: relative;
+}
+
+/* image 4 layout and hover */
+
+.wrap4 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img4.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap4::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap4:hover::before {
+	transform: scale(3);
+}
+
+.wrap4 .mask4 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap4 .mask4:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap4 .mask4 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap4 .mask4:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap4 .mask4 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap4 .mask4:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap4 .mask4:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap4 .mask4 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap4 .mask4:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img4 {
+	position: relative;
+}
+
+
+/* image 5 layout and hover */
+
+.wrap5 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img5.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap5::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap5:hover::before {
+	transform: scale(3);
+}
+
+.wrap5 .mask5 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap5 .mask5:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap5 .mask5 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap5 .mask5:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap5 .mask5 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap5 .mask5:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap5 .mask5:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap5 .mask5 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -25px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap5 .mask5:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img5 {
+	position: relative;
+}
+
+
+/* image 6 layout and hover */
+
+.wrap6 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img6.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap6::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap6:hover::before {
+	transform: scale(3);
+}
+
+.wrap6 .mask6 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap6 .mask6:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap6 .mask6 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap6 .mask6:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap6 .mask6 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap6 .mask6:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap6 .mask6:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap6 .mask6 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap6 .mask6:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img6 {
+	position: relative;
+}
+
+/* image 7 layout and hover */
+
+.wrap7 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img7.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap7::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap7:hover::before {
+	transform: scale(3);
+}
+
+.wrap7 .mask7 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap7 .mask7:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap7 .mask7 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap7 .mask7:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap7 .mask7 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap7 .mask7:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap7 .mask7:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap7 .mask7 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap7 .mask7:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img7 {
+	position: relative;
+}
+
+/* image 8 layout and hover */
+
+.wrap8 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img8.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap8::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap8:hover::before {
+	transform: scale(3);
+}
+
+.wrap8 .mask8 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap8 .mask8:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap8 .mask8 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap8 .mask8:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap8 .mask8 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap8 .mask8:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap8 .mask8:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap8 .mask8 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap8 .mask8:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img8 {
+	position: relative;
+}
+
+/* image 9 layout and hover */
+
+.wrap9 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img9.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap9::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap9:hover::before {
+	transform: scale(3);
+}
+
+.wrap9 .mask9 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap9 .mask9:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap9 .mask9 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap9 .mask9:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap9 .mask9 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap9 .mask9:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap9 .mask9:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap9 .mask9 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap9 .mask9:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img9 {
+	position: relative;
+}
+
+/* image 10 layout and hover */
+
+.wrap10 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img10.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap10::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap10:hover::before {
+	transform: scale(3);
+}
+
+.wrap10 .mask10 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap10 .mask10:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap10 .mask10 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap10 .mask10:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap10 .mask10 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap10 .mask10:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap10 .mask10:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap10 .mask10 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap10 .mask10:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img10 {
+	position: relative;
+}
+
+/* image 11 layout and hover */
+
+.wrap11 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img11.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap11::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap11:hover::before {
+	transform: scale(3);
+}
+
+.wrap11 .mask11 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap11 .mask11:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap11 .mask11 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap11 .mask11:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap11 .mask11 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap11 .mask11:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap11 .mask11:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap11 .mask11 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap11 .mask11:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img11 {
+	position: relative;
+}
+
+/* image 12 layout and hover */
+
+.wrap12 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img12.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap12::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap12:hover::before {
+	transform: scale(3);
+}
+
+.wrap12 .mask12 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap12 .mask12:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap12 .mask12 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap12 .mask12:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap12 .mask12 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap12 .mask12:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap12 .mask12:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap12 .mask12 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap12 .mask12:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img12 {
+	position: relative;
+}
+
+/* image 13 layout and hover */
+
+.wrap13 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img13.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap13::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap13:hover::before {
+	transform: scale(3);
+}
+
+.wrap13 .mask13 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap13 .mask13:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap13 .mask13 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap13 .mask13:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap13 .mask13 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap13 .mask13:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap13 .mask13:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap13 .mask13 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap13 .mask13:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img13 {
+	position: relative;
+}
+
+/* image 14 layout and hover */
+
+.wrap14 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img14.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap14::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap14:hover::before {
+	transform: scale(3);
+}
+
+.wrap14 .mask14 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap14 .mask14:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap14 .mask14 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap14 .mask14:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap14 .mask14 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap14 .mask14:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap14 .mask14:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap14 .mask14 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap14 .mask14:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img14 {
+	position: relative;
+}
+
+/* image 15 layout and hover */
+
+.wrap15 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img15.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap15::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap15:hover::before {
+	transform: scale(3);
+}
+
+.wrap15 .mask15 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap15 .mask15:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap15 .mask15 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap15 .mask15:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap15 .mask15 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap15 .mask15:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap15 .mask15:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap15 .mask15 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap15 .mask15:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img15 {
+	position: relative;
+}
+
+/* image 16 layout and hover */
+
+.wrap16 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img16.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap16::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap16:hover::before {
+	transform: scale(3);
+}
+
+.wrap16 .mask16 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap16 .mask16:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap16 .mask16 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap16 .mask16:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap16 .mask16 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap16 .mask16:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap16 .mask16:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap16 .mask16 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -25px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap16 .mask16:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img16 {
+	position: relative;
+}
+
+/* image 17 layout and hover */
+
+.wrap17 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img17.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap17::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap17:hover::before {
+	transform: scale(3);
+}
+
+.wrap17 .mask17 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap17 .mask17:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap17 .mask17 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap17 .mask17:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap17 .mask17 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap17 .mask17:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap17 .mask17:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap17 .mask17 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap17 .mask17:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img17 {
+	position: relative;
+}
+
+/* image 18 layout and hover */
+
+.wrap18 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img18.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap18::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap18:hover::before {
+	transform: scale(3);
+}
+
+.wrap18 .mask18 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap18 .mask18:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap18 .mask18 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap18 .mask18:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap18 .mask18 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap18 .mask18:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap18 .mask18:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap18 .mask18 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap18 .mask18:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img18 {
+	position: relative;
+}
+
+/* image 19 layout and hover */
+
+.wrap19 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img19.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap19::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap19:hover::before {
+	transform: scale(3);
+}
+
+.wrap19 .mask19 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap19 .mask19:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap19 .mask19 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap19 .mask19:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap19 .mask19 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap19 .mask19:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap19 .mask19:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap19 .mask19 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap19 .mask19:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img19 {
+	position: relative;
+}
+
+/* image 20 layout and hover */
+
+.wrap20 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img20.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap20::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap20:hover::before {
+	transform: scale(3);
+}
+
+.wrap20 .mask20 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap20 .mask20:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap20 .mask20 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap20 .mask20:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap20 .mask20 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap20 .mask20:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap20 .mask20:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap20 .mask20 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap20 .mask20:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img20 {
+	position: relative;
+}
+
+/* image 21 layout and hover */
+
+.wrap21 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img21.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap21::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap21:hover::before {
+	transform: scale(3);
+}
+
+.wrap21 .mask21 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap21 .mask21:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap21 .mask21 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap21 .mask21:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap21 .mask21 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap21 .mask21:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap21 .mask21:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap21 .mask21 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap21 .mask21:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img21 {
+	position: relative;
+}
+
+/* image 22 layout and hover */
+
+.wrap22 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img22.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap22::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap22:hover::before {
+	transform: scale(3);
+}
+
+.wrap22 .mask22 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap22 .mask22:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap22 .mask22 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap22 .mask22:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap22 .mask22 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap22 .mask22:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap22 .mask22:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap22 .mask22 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap22 .mask22:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img22 {
+	position: relative;
+}
+
+/* image 23 layout and hover */
+
+.wrap23 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img23.png");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap23::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap23:hover::before {
+	transform: scale(3);
+}
+
+.wrap23 .mask23 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap23 .mask23:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap23 .mask23 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap23 .mask23:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap23 .mask23 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap23 .mask23:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap23 .mask23:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap23 .mask23 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap23 .mask23:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img23 {
+	position: relative;
+}
+
+/* image 24 layout and hover */
+
+.wrap24 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img24.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap24::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap24:hover::before {
+	transform: scale(3);
+}
+
+.wrap24 .mask24 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap24 .mask24:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap24 .mask24 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap24 .mask24:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap24 .mask24 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap24 .mask24:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap24 .mask24:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap24 .mask24 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap24 .mask24:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img24 {
+	position: relative;
+}
+
+/* image 25 layout and hover */
+
+.wrap25 {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	transition: all .8s;
+	background-image: url("img25.jpg");
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.wrap25::before {
+	content: "";
+	position: absolute; top:0;right:0;bottom:0;left:0;
+	background:inherit;
+	transition:inherit;
+}
+
+.wrap25:hover::before {
+	transform: scale(3);
+}
+
+.wrap25 .mask25 {
+	background-color: #ffffe6;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .8s;
+}
+
+.wrap25 .mask25:hover {
+	background-color: #ffffe6;
+	opacity: 1;
+}
+
+.wrap25 .mask25 h1 {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	transform: scale(0);
+	transition: all .8s;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+.wrap25 .mask25:hover h1 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap25 .mask25 h2 {
+	color: black;
+	font-style: italic;
+	font-size: 10px;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap25 .mask25:hover h2 {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+hr {
+	width: 75%;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap25 .mask25:hover hr {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+.wrap25 .mask25 a {
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 12px 18px;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	bottom: -40px;
+	position: relative;
+	transform: scale(0);
+	transition: all .8s;
+}
+
+.wrap25 .mask25:hover a {
+	transform: scale(1);
+	transition-delay: .2s;
+}
+
+
+.img25 {
+	position: relative;
+}
+
+</style>
+
+<!-- end of styling and head section -->
+
+
+</head>
+
+<!-- beg body and HTML divs -->
+
+<body>
+
+<div class="container">	
+<div class="header">
+<h1> My Favorite Albums Store</h1>
+</div>
+	<div class="wrap1">	
+	<div class="img1"></div>
+	<div class="mask1">
+		<h1>Channel Orange</h1>
+		<hr>
+		<h2>By Frank Ocean</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap2">
+	<div class="img2"></div>
+	<div class="mask2">
+		<h1>Friday Night Lights</h1>
+		<hr>
+		<h2>By J. Cole</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap3">
+	<div class="img3"></div>
+	<div class="mask3">
+		<h1>Underneath The Pine</h1>
+		<hr>
+		<h2>By Toro Y Moi</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap4">
+	<div class="img4"></div>
+	<div class="mask4">
+		<h1>Pluto</h1>
+		<hr>
+		<h2>By Future</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap5">
+	<div class="img5"></div>
+	<div class="mask5">
+		<h1>Habits & Contradictions</h1>
+		<hr>
+		<h2>By ScHoolboy Q</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap6">
+	<div class="img6"></div>
+	<div class="mask6">
+		<h1>Overgrown</h1>
+		<hr>
+		<h2>By James Blake</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap7">
+	<div class="img7"></div>
+	<div class="mask7">
+		<h1>Kush & OJ</h1>
+		<hr>
+		<h2>By Wiz Khalifa</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap8">
+	<div class="img8"></div>
+	<div class="mask8">
+		<h1>LiveLoveASAP</h1>
+		<hr>
+		<h2>By A$AP Rocky</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap9">
+	<div class="img9"></div>
+	<div class="mask9">
+		<h1>The Cool</h1>
+		<hr>
+		<h2>By Lupe Fiasco</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap10">
+	<div class="img10"></div>
+	<div class="mask10">
+		<h1>Section.80</h1>
+		<hr>
+		<h2>By Kendrick Lamar</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap11">
+	<div class="img11"></div>
+	<div class="mask11">
+		<h1>House of Balloons</h1>
+		<hr>
+		<h2>By The Weeknd</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap12">
+	<div class="img12"></div>
+	<div class="mask12">
+		<h1>These Streets</h1>
+		<hr>
+		<h2>By Paolo Nutini</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap13">
+	<div class="img13"></div>
+	<div class="mask13">
+		<h1>Days Before Rodeo</h1>
+		<hr>
+		<h2>By Travis Scott</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap14">
+	<div class="img14"></div>
+	<div class="mask14">
+		<h1>Cilvia Demo</h1>
+		<hr>
+		<h2>By Isaiah Rashad</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap15">
+	<div class="img15"></div>
+	<div class="mask15">
+		<h1>Yellow Album</h1>
+		<hr>
+		<h2>By Dom Kennedy</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap16">
+	<div class="img16"></div>
+	<div class="mask16">
+		<h1>If You're Reading This It's Too Late</h1>
+		<hr>
+		<h2>By Drake</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap17">
+	<div class="img17"></div>
+	<div class="mask17">
+		<h1>Late Registration</h1>
+		<hr>
+		<h2>By Kanye West</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap18">
+	<div class="img18"></div>
+	<div class="mask18">
+		<h1>Pure Heroine</h1>
+		<hr>
+		<h2>By Lorde</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap19">
+	<div class="img19"></div>
+	<div class="mask19">
+		<h1>PartyNextDoor 2</h1>
+		<hr>
+		<h2>By PartyNextDoor</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap20">
+	<div class="img20"></div>
+	<div class="mask20">
+		<h1>Slime Season 3</h1>
+		<hr>
+		<h2>By Young Thug</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap21">
+	<div class="img21"></div>
+	<div class="mask21">
+		<h1>Sremmlife</h1>
+		<hr>
+		<h2>By Rae Sremmurd</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap22">
+	<div class="img22"></div>
+	<div class="mask22">
+		<h1>The Blueprint</h1>
+		<hr>
+		<h2>By Jay-Z</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap23">
+	<div class="img23"></div>
+	<div class="mask23">
+		<h1>Kiss Land</h1>
+		<hr>
+		<h2>By The Weeknd</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap24">
+	<div class="img24"></div>
+	<div class="mask24">
+		<h1>Cruel Intentions</h1>
+		<hr>
+		<h2>By Tory Lanez</h2>
+		<a href="#">Read More</a>
+	</div></div>
+	<div class="wrap25">
+	<div class="img25"></div>
+	<div class="mask25">
+		<h1>Waking At Dawn</h1>
+		<hr>
+		<h2>By Roy Woods</h2>
+		<a href="#">Read More</a>
+	</div></div>
+</div>
+
+<!-- end body -->
+
+</body>
+</html>

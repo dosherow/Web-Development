@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2 Product Page</title>
+
+	<style>
+
+
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-gap: 20px;
+		text-align: center;
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.header {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		background: black;
+		color: white;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-wrap: flex;
+	}
+
+	.header h1 {
+		font-family: 'avenir';
+		letter-spacing: 3px;
+	}
+
+	#wrap1 {
+		width: 400px;
+		height: 420px;
+		overflow: hidden;
+		position: relative;
+		background-image: url("vinyl.png");
+		background-position: center;
+		background-size: 320px;
+		background-repeat: no-repeat;
+		
+		
+	}
+
+	.item1 {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.item1 h1 {
+		color: black;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		padding-top: 360px;
+		
+	}
+
+	#wrap2 {
+		width: 400px;
+		height: 420px;
+		overflow: hidden;
+		position: relative;
+		background-image: url("seasonpass.png");
+		background-position: center;
+		background-size: 400px;
+		background-repeat: no-repeat;
+		
+		
+	}
+
+	.item2 {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.item2 h1 {
+		color: black;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		padding-top: 360px;
+		
+	}
+
+	#wrap3 {
+		width: 400px;
+		height: 420px;
+		overflow: hidden;
+		position: relative;
+		background-image: url("screw.png");
+		background-position: center;
+		background-size: 260px;
+		background-repeat: no-repeat;
+		
+		
+	}
+
+	.item3 {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.item3 h1 {
+		color: black;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		padding-top: 360px;
+
+	}
+
+	#cart {
+		grid-column: 3;
+		grid-row: 6;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: blue;
+		letter-spacing: 2px;
+
+	}
+
+	.footer {
+		grid-column: 1 / -1;
+		grid-row: 7;
+		background: orange;
+		text-align: center;
+		color: white;
+	}
+
+	.footer p {
+		font-family: 'futura';
+		font-style: italic;
+		font-size: 12px;
+		letter-spacing: 4px;
+	}
+
+
+
+	</style>
+</head>
+
+<body>
+
+<div class ="container">
+	<div class="header"><h1>Astroworld Merchandise</h1></div>
+	<div id="wrap1">
+		<div class="item1">
+		<h1>Astroworld Vinyl Bundle</h1>
+		$<span id="album">30</span>
+		</div></div>
+	<div id="wrap2">
+		<div class="item2">
+		<h1>Astroworld Season Pass</h1>
+		$<span id="pass">10</span>
+		</div></div>
+	<div id="wrap3">
+		<div class="item3">
+		<h1>RIP DJ Screw T-Shirt</h1>
+		$<span id="shirt">50</span>
+		</div></div>	
+	<div id="cart">Cart Subtotal: $<span id="subtotal">0</span></div>	
+	<div class="footer"><p>Cactus Jack Records 2018</p></div>
+</div>
+
+<script>
+
+var sub = 0;	
+
+ document.querySelector('.item1').onclick = function() {
+		var album = document.querySelector('#album').innerHTML;
+		album = parseInt(album);
+		sub += album;
+		document.querySelector('#subtotal').innerHTML = sub;
+		};
+
+document.querySelector('.item2').onclick = function() {
+		var szn = document.querySelector('#pass').innerHTML;
+		szn = parseInt(szn);
+		sub += szn;
+		document.querySelector('#subtotal').innerHTML = sub;
+		};
+
+document.querySelector('.item3').onclick = function() {
+		var dj = document.querySelector('#shirt').innerHTML;
+		dj = parseInt(dj);
+		sub += dj;
+		document.querySelector('#subtotal').innerHTML = sub;
+		};			
+
+
+</script>	
+
+
+</body>
+
+
+
+
+
+</html>

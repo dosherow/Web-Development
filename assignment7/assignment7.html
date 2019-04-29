@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 7: Flexbox</title>
+
+<style>
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #2d223a;
+}
+
+.title h1 {
+  font-weight: 900;
+  color: #795a9b;
+  letter-spacing: 8px;
+  font-variant: small-caps;
+  font-style: italic;
+}
+
+.row {
+  width: 100%;
+  margin: 8px;
+}
+
+.row p {
+  float: left;
+  letter-spacing: 1.5px;
+  font-size: 80%;
+  font-weight: 900;
+  width: 75%;
+  margin-top: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.row span {
+  float: right;
+  font-size: 70%;
+  font-weight: 500;
+}
+
+.row img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.element {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.element .row {
+	padding-top: 15px;
+}
+
+body {
+  background-color: #f9fbff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir';
+}
+
+
+</style>	
+
+
+</head>
+<body>
+<header>
+<div class="element">
+	<header>
+		<div class="title">
+		<h1>Figueroa Drive-In.</h1>
+		</div>
+	</div>
+</header>
+
+	<div class="element">
+		<div class="row" id="img1">
+			<img src="img1.jpg" id="img1">
+			<p>Aime Leon Dore Home Crest Tee</p>
+			<span>$75.00</span>
+		</div>
+		<div class="row" id="img2">	
+			<img src="img2.jpg" id="img2">
+			<p>Rhude Unicorn Tee</p>
+			<span>$205.00</span>
+		</div>
+		<div class="row" id="img3">
+			<img src="img3.jpg" id="img3">
+			<p>Kith X Tommy Hilfiger Crest Hoodie</p>
+			<span>$165.00</span>
+		</div>
+	</div>
+
+
+	<div class="element">
+		<div class="row" id="img4">
+			<img src="img5.jpg" id="img4">
+			<p>CONVERSE X CARHARTT WIP ONE STAR</p>
+			<span>$110.00</span>
+		</div>
+		<div class="row" id="img5">	
+			<img src="img4.jpg" id="img5">
+			<p>CAV EMPT TRAINING JACKET #5</p>
+			<span>$448.00</span>
+		</div>
+		<div class="row" id="img6">
+			<img src="img6.jpg" id="img6">
+			<p>NEW BALANCE M991NGG</p>
+			<span>$180.00</span>
+		</div>
+		<div class="row" id="img7">
+			<img src="img7.jpg" id="img7">
+			<p>ROKIT THE GALLERY HOODIE</p>
+			<span>$175.00</span>
+		</div>
+	</div>
+
+
+</body>
+</html>

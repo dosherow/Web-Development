@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Password Validator</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+	<style>
+		.rules {
+			background-color: #FF0;
+			margin:	10px 0px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<h1 class="col-12 text-center mt-5">Password Validator</h1>
+		</div> <!-- .row -->
+
+		<div class="row mt-5">
+			<div class="col-12 col-sm-5">
+				<h3 class="mb-4">Password:</h3>
+				<input type="text" name="" id="pass-input" class="form-control">
+			</div>
+
+			<div class="col-12 col-sm-7">
+				<h3 class="mb-4">Validation Rules:</h3>
+				<div class="rules" id="rule1">1: Cannot be empty/blank.</div>
+				<div class="rules" id="rule2">2: Must contain at least 5 characters.</div>
+				<div class="rules" id="rule3">3: Must have at least one special character @ or #.</div>
+				<div class="rules" id="rule4">4: Must contain upper AND lower case characters.</div>
+				<div class="rules" id="rule5">5: Cannot contain word 'pass' (case insensitive).</div>
+			</div>
+		</div> <!-- .row -->
+	</div> <!-- .container-fluid -->
+
+	<!-- beg script --> 
+
+	<script>
+		document.querySelector("#pass-input").oninput = function () {
+			console.log(this.value);
+
+		var isValid = true;
+		var pass = document.querySelector("#pass-input").value.trim();
+
+		if (pass.length == 0) {
+			isValid = false;
+			document.querySelector("#rule1").style.backgroundColor = "#f44242";
+		}
+		else {
+			document.querySelector("#rule1").style.backgroundColor = "#41f444";
+		}
+
+		if (pass.length < 5) {
+			isValid = false;
+			document.querySelector("#rule2").style.backgroundColor = "#f44242";
+		}
+		else {
+			document.querySelector("#rule2").style.backgroundColor = "#41f444";
+		}
+
+		// fix OR statement to account for either character 
+		if (pass.indexOf("@") == -1 && pass.indexOf("#") == -1) {
+			isValid = false;
+			document.querySelector("#rule3").style.backgroundColor = "#f44242";
+		}
+		else {
+			document.querySelector("#rule3").style.backgroundColor = "#41f444";
+		}
+
+		if (pass == pass.toLowerCase()) {
+			isValid = false;
+			document.querySelector("#rule4").style.backgroundColor = "#f44242";
+		}
+		else if (pass == pass.toUpperCase()) {
+			isValid = false;
+			document.querySelector("#rule4").style.backgroundColor = "#f44242";
+		}
+		else {
+			document.querySelector("#rule4").style.backgroundColor = "#41f444";
+		}
+
+		if (pass.toLowerCase().indexOf("pass") != -1) {
+			isValid = false;
+			document.querySelector("#rule5").style.backgroundColor = "#f44242";
+		}
+		else {
+			document.querySelector("#rule5").style.backgroundColor = "#41f444";
+		}
+
+	}
+	</script>
+
+</body>
+</html>
